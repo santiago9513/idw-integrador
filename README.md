@@ -1,15 +1,15 @@
 # TRABAJO FINAL INTEGRADOR
-### INTRODUCCIÓN AL DESARROLLO WEB - 2025  1er cuatrimestre
-### TECNICATURA UNIVERSITARIA EN DESARROLLO WEB
-### FACULTAD DE CIENCIAS DE LA ADMINISTRACION - UNER
+#### INTRODUCCIÓN AL DESARROLLO WEB - 2025  1er cuatrimestre
+#### TECNICATURA UNIVERSITARIA EN DESARROLLO WEB
+#### FACULTAD DE CIENCIAS DE LA ADMINISTRACION - UNER
 
-## Integrantes del grupo:
+# Integrantes del grupo:
 
-- Santiago Carro
-- Nabila Trippe
-- Franco Ñaña
-- Myrna Palacios
-- Jesica Toloza
+### - Santiago Carro
+### - Nabila Trippe
+### - Franco Ñaña
+### - Myrna Palacios
+### - Jesica Toloza
 
 # Enunciado General
 
