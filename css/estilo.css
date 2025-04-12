@@ -30,13 +30,13 @@ body {
   /* Título principal */
   h1 {
     text-align: center;
-    color: #333;
+    color: #b5a484;
     margin-top: 60px;
   }
   
   /* Cada salón */
   div {
-    border: 1px solid #ccc;
+    border: 1px solid #b5a484;
     margin: 400px;
     margin-top: 80px;
     margin-bottom: 100px;
