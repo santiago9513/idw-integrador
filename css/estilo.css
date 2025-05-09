@@ -34,7 +34,7 @@ body {
     margin-top: 60px;
   }
   
-  /* Cada salón */
+  /* Cada salón 
   div {
     border: 1px solid #b5a484;
     margin: 400px;
@@ -44,7 +44,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     }
-
+*/
   div h2{
     text-align: center;
     color: #b5a484;
@@ -63,7 +63,7 @@ body {
     margin: 10px auto;
   }
   
-  /* Footer */
+  /* Footer 
   footer {
     background-color: #b5a484;
     color: white;
@@ -71,3 +71,4 @@ body {
     padding: 10px 0;
     margin-top: 40px;
   }
+  */
