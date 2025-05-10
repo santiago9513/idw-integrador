@@ -56,16 +56,17 @@ body {
     border-radius: 8px;
     }
 */
+/*
   div h2{
     text-align: center;
     color: #b5a484;
   }
-
+/*
   div p{
     text-align: center;
   }
   
-  /* Imágenes */
+  /* Imágenes 
   img {
     width: 100%;
     max-width: 500px;
@@ -73,7 +74,7 @@ body {
     display: block;
     margin: 10px auto;
   }
-  
+  */
   /* Footer 
   footer {
     background-color: #b5a484;
