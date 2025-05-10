@@ -3,7 +3,10 @@
   background-color: #b5a484;
 }
 
-
+/* Color para Texto */
+.text-beige {
+  color: #b5a484
+}
 
 
 /* Estilo general del cuerpo del sitio */
@@ -35,13 +38,13 @@ body {
     margin-right: 40px;;
   }
   */
-  /* Título principal */
+  /* Título principal 
   h1 {
     text-align: center;
     color: #b5a484;
     margin-top: 60px;
   }
-  
+  */
   /* Cada salón 
   div {
     border: 1px solid #b5a484;
