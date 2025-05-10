@@ -1,3 +1,11 @@
+/* Color para Backgoround */
+.bg-beige {
+  background-color: #b5a484;
+}
+
+
+
+
 /* Estilo general del cuerpo del sitio */
 body {
     font-family: Arial, sans-serif;
