@@ -10,15 +10,23 @@
 </head>
 
 <body class="bg-light">
-    <header class="py-3 bg-beige" >
-        <nav class="nav nav-underline justify-content-center gap-5 d-flex flex-column flex-md-row align-items-center">
-            <a class="nav-link active text-white fw-semibold" aria-current="page" href="index.html">INICIO</a>
-            <a class="nav-link text-white fw-semibold" href="salones.html">NUESTROS SALONES</a>
-            <a class="nav-link text-white fw-semibold" href="adicionales.html">SERVICIOS ADICIONALES</a>
-            <a class="nav-link text-white fw-semibold" href="infoinst.html">INFORMACION INSTITUCIONAL</a>
-            <a class="nav-link text-white fw-semibold" href="contacto.html">CONTACTO</a>
-        </nav>
-    </header>
+    <header class="bg-beige">
+    <nav class="navbar navbar-expand-md container">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navContent">
+            <div class="nav nav-underline flex-column flex-md-row gap-5 align-items-center">
+                <a class="nav-link text-white fw-semibold active" href="index.html">INICIO</a>
+                <a class="nav-link text-white fw-semibold" href="salones.html">NUESTROS SALONES</a>
+                <a class="nav-link text-white fw-semibold" href="adicionales.html">SERVICIOS ADICIONALES</a>
+                <a class="nav-link text-white fw-semibold" href="infoinst.html">INFORMACION INSTITUCIONAL</a>
+                <a class="nav-link text-white fw-semibold" href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+</header>
     
     <main>
         <section>
@@ -111,7 +119,8 @@
                 <a href="terms.html" class="text-white text-decoration-underline ms-2">Términos de Uso</a>
             </p>
         </div>
-    </footer>   
+    </footer>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
 </html>
