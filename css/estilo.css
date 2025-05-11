@@ -6,10 +6,6 @@ header, footer {
   background-color: #b5a484;
 }
 
-h1, h2, h3, h4, h6 {
-  color: #b5a484;
-}
-
-.text-dorado {
+h1, h4 {
   color: #b5a484;
 }
