@@ -1,11 +1,9 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
-header, footer {
+/* Color para Backgoround */
+.bg-beige {
   background-color: #b5a484;
 }
 
-h1, h4 {
-  color: #b5a484;
+/* Color para Texto */
+.text-beige {
+  color: #b5a484
 }
