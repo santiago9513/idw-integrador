@@ -4,81 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Información Institucional - IDW S.A</title>
-  <!-- Le agrego Bootstrap para aprovechar su sistema de grillas y componentes responsivos -->
+  <!-- Bootstrap para que todo sea responsive y más fácil de estilizar -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Este es el archivo donde puse los estilos personalizados como el fondo beige -->
+  <!-- Archivo de estilos donde definí el color beige y más -->
   <link rel="stylesheet" href="css/estilo.css">
 </head>
 
-<!-- Le pongo fondo claro al body como pide el trabajo -->
+<!-- Le doy fondo claro general -->
 <body class="bg-light">
   
-  <!-- Acá arranco con el header y le doy el fondo beige que me piden -->
+  <!-- Encabezado con menú de navegación -->
   <header class="bg-beige">
     <nav class="navbar navbar-expand-lg navbar-light container">
-      <!-- Pongo el nombre de la empresa a la izquierda -->
-      <a class="navbar-brand text-white" href="#">IDW S.A.</a>
-      <!-- Esto es el botón hamburguesa que aparece en celulares -->
+      <a class="navbar-brand text-white fw-semibold" href="#">IDW S.A.</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Acá está el menú que se va a ocultar en pantallas chicas -->
+
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <!-- Agrego todos los links del menú -->
-          <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
-          <li class="nav-item"><a class="nav-link" href="salones.html">NUESTROS SALONES</a></li>
-          <li class="nav-item"><a class="nav-link" href="adicionales.html">SERVICIOS ADICIONALES</a></li>
-          <li class="nav-item"><a class="nav-link active" href="infoinst.html">INFORMACIÓN INSTITUCIONAL</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-white" href="index.html">INICIO</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-white" href="salones.html">NUESTROS SALONES</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-white" href="adicionales.html">SERVICIOS ADICIONALES</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-white active" href="infoinst.html">INFORMACIÓN INSTITUCIONAL</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold text-white" href="contacto.html">CONTACTO</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <!-- Este es el contenido principal -->
+  <!-- Contenido principal -->
   <main class="container py-5">
-    <!-- Le doy márgenes y alineación centrada al título -->
-    <h1 class="text-center my-5 text-beige">¿Quiénes Somos?</h1>
+    
+    <!-- Título principal -->
+    <section>
+      <h1 class="text-center my-5 text-beige">¿Quiénes Somos?</h1>
+    </section>
 
-    <!-- Primera sección, le pongo margen abajo para que no quede todo junto -->
+    <!-- Primera sección con texto explicativo -->
     <section id="quienes-somos" class="mb-5">
-      <p>En IDW S.A. nos especializamos en el desarrollo de soluciones digitales orientadas a la gestión de eventos infantiles...</p>
-      <p>Nos enfocamos en ofrecer una herramienta intuitiva y eficiente...</p>
-      <p>Desde nuestro rol como desarrolladores del sitio, buscamos que cada aspecto...</p>
+      <div class="card shadow-sm bg-white border-0 p-4 rounded-4 mx-md-5">
+        <p class="fs-5">En <span class="text-beige fw-semibold">IDW S.A.</span> nos especializamos en el desarrollo de soluciones digitales orientadas a la gestión de eventos infantiles.</p>
+        <p class="fs-5">Nos enfocamos en ofrecer una herramienta intuitiva y eficiente para que cada celebración sea un éxito.</p>
+        <p class="fs-5">Desde nuestro rol como desarrolladores del sitio, buscamos que cada aspecto esté pensado para facilitar el trabajo de los organizadores y generar una experiencia positiva para los usuarios.</p>
+      </div>
     </section>
 
-    <!-- Segunda sección con título en color beige -->
+    <!-- Misión y visión con título estilizado -->
     <section id="mision-vision" class="mb-5">
-      <h2 class="text-beige">Misión y Visión</h2>
-      <p>Nuestra misión es proporcionar una plataforma accesible y adaptativa...</p>
-      <p>Nuestra visión es ser líderes en el sector...</p>
+      <div class="card shadow-sm bg-white border-0 p-4 rounded-4 mx-md-5">
+        <h2 class="text-center text-secondary mb-4">Misión y Visión</h2>
+        <p class="fs-5">Nuestra misión es proporcionar una plataforma accesible y adaptativa, que se ajuste a las necesidades reales del rubro de eventos infantiles.</p>
+        <p class="fs-5">Nuestra visión es ser líderes en el sector digital aplicando innovación constante y manteniendo un fuerte compromiso con la calidad del servicio.</p>
+      </div>
     </section>
 
-    <!-- Última sección, uso una lista de Bootstrap para que se vea prolija -->
+    <!-- Lista de valores con diseño limpio -->
     <section id="valores">
-      <h2 class="text-beige">Valores</h2>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Innovación.</li>
-        <li class="list-group-item">Calidad.</li>
-        <li class="list-group-item">Atención al cliente.</li>
-        <li class="list-group-item">Responsabilidad social.</li>
-      </ul>
+      <div class="card shadow-sm bg-white border-0 p-4 rounded-4 mx-md-5">
+        <h2 class="text-center text-secondary mb-4">Valores</h2>
+        <ul class="list-group list-group-flush fs-5">
+          <li class="list-group-item">Innovación.</li>
+          <li class="list-group-item">Calidad.</li>
+          <li class="list-group-item">Atención al cliente.</li>
+          <li class="list-group-item">Responsabilidad social.</li>
+        </ul>
+      </div>
     </section>
+    
   </main>
 
-  <!-- Footer con fondo beige, texto blanco y centrado -->
-  <footer class="bg-beige text-white text-center py-4">
+  <!-- Pie de página -->
+  <footer class="bg-beige text-white text-center py-4 mt-5">
     <p class="mb-1">&copy; 2025 Grupo44. Todos los Derechos Reservados.</p>
     <p class="mb-1">Dirección: Av. de los Colores 144, Villa Caramelo | Tel: +54 11 1234 5678</p>
-    <!-- Estos links también los hago blancos para que se vean sobre el fondo -->
-    <p><a href="privacy.html" class="text-white">Política de Privacidad</a> | <a href="terms.html" class="text-white">Términos de Uso</a></p>
+    <p>
+      <a href="privacy.html" class="text-white text-decoration-underline me-2">Política de Privacidad</a> | 
+      <a href="terms.html" class="text-white text-decoration-underline ms-2">Términos de Uso</a>
+    </p>
   </footer>
 
-  <!-- Este es el JS de Bootstrap, necesario para que funcione el menú hamburguesa -->
+  <!-- JS de Bootstrap para menú hamburguesa -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
