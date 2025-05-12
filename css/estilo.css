@@ -7,3 +7,9 @@
 .text-beige {
   color: #b5a484
 }
+
+.card-img-top {
+  width: 100%;         
+  height: 400px;       
+  object-fit: cover;   
+}
