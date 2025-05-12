@@ -9,69 +9,122 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="salones.html">NUESTROS SALONES</a></li>
-                <li><a href="adicionales.html">SERVICIOS ADICIONALES</a></li>
-                <li><a href="infoinst.html">INFORMACION INSTITUCIONAL</a></li>
-                <li><a href="contacto.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-light">
+
+<header class="bg-beige">
+    <nav class="navbar navbar-expand-md container">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navContent">
+            <div class="nav nav-underline flex-column flex-md-row gap-5 align-items-center">
+                <a class="nav-link text-white fw-semibold active" href="index.html">INICIO</a>
+                <a class="nav-link text-white fw-semibold" href="salones.html">NUESTROS SALONES</a>
+                <a class="nav-link text-white fw-semibold" href="adicionales.html">SERVICIOS ADICIONALES</a>
+                <a class="nav-link text-white fw-semibold" href="infoinst.html">INFORMACION INSTITUCIONAL</a>
+                <a class="nav-link text-white fw-semibold" href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+</header>
     
     <main>
-        
         <section>
-            <h1>GRUPO44</h1>
+            <h1 class="text-center my-5 text-beige">Bienvenidos a 44Group!</h1>
         </section>
         
-        <div>
-            <img src="img/fiesta Infantil.jpg" alt="Fiesta infantil">
-            <h2>Bienvenidos!</h2>
-            <h3>El lugar ideal para celebrar los momentos más especiales de tus peques</h3>
-            <p>
-                En <strong>44Group</strong> sabemos lo importante que es cada cumpleaños. Por eso te ofrecemos salones infantiles pensados para que los chicos se diviertan a lo grande en un ambiente seguro y lleno de alegría.
-            </p>
-            <p>Tenemos todo lo que necesitás:</p>
-            <ul>
-                <li>Animación profesional</li>
-                <li>Decoración temática</li>
-                <li>Catering para chicos y adultos</li>
-                <li>Sonido y fotografía</li>
-                <li>Juegos y entretenimiento</li>
-            </ul>
-            <p>
-                Reservá fácil, rápido y seguro. Nosotros nos ocupamos de cada detalle para que vos solo disfrutes junto a ellos.
-            </p>
-            <h4>¡Hacé que su cumple sea un recuerdo inolvidable!</h4>
-        </div>
+        <section class="text-center my-5">
+            <div class="container">
+                <img src="img/fiesta Infantil.jpg" alt="Fiesta infantil" class="img-fluid rounded-4 shadow-lg">
+            </div>
+        </section>
+        
+        <section class="container my-5">
+            <div class="card shadow-sm bg-white border-0 p-4 rounded-4 mx-5">
+                
+                <h3 class="text-center text-secondary mb-3">El lugar ideal para celebrar los momentos más especiales de tus peques</h3>
+                
+                <div class="card-body">
+                    <p class="fs-5">
+                    En <span class="text-beige fw-semibold">44Group</span> sabemos lo importante que es cada cumpleaños.
+                    Por eso te ofrecemos salones infantiles pensados para que los chicos se diviertan a lo grande en un
+                    ambiente seguro y lleno de alegría.
+                    </p>
+                    
+                    <h5 class="mt-4 text-secondary fw-semibold">Tenemos todo lo que necesitás:</h5>
+                    
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li class="d-flex mb-2">
+                            <span class="me-2 text-success">✔</span>
+                            <span>Animación profesional</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <span class="me-2 text-success">✔</span>
+                            <span>Decoración temática</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <span class="me-2 text-success">✔</span>
+                            <span>Catering para chicos y adultos</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <span class="me-2 text-success">✔</span>
+                            <span>Sonido y fotografía</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <span class="me-2 text-success">✔</span>
+                            <span>Juegos y entretenimiento</span>
+                        </li>
+                    </ul>
 
-        <div>
-            <img src="img/Deco de salon.jpg" alt="Decoración de salón">
-            <h2>Ambientes unicos</h2>
-            <p>
-                Cada salón está diseñado para que vivas una experiencia especial, con opciones personalizadas según tu estilo y el de tus peques.
-            </p>
-        </div>
+                    <p class="fs-5 fst-italic">
+                    Reservá fácil, rápido y seguro. Nosotros nos ocupamos de cada detalle para que vos solo disfrutes
+                    junto a ellos.
+                    </p>
+                </div>
+            </div>
+            <h3 class="text-center text-secondary my-5">¡Hacé que su cumple sea un recuerdo inolvidable!</h4>
+        </section>
+        
+        <section class="container my-5">
+            <div class="card border-0 shadow p-5 rounded-4 mx-5">
+                <img src="img/Deco de salon.jpg" alt="Decoración de salón" class="card-img-top rounded-top">
+                <div class="card-body text-center">
+                    <h2 class="text-beige mb-3">Ambientes únicos</h2>
+                    <p class="card-text fs-5">
+                        Cada salón está diseñado para vivir una experiencia especial, con opciones personalizadas 
+                        según la tematica elegida.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            <img src="img/animacion infantil.jpg" alt="Animación infantil">
-            <h2>Animacion profesional</h2>
-            <p>
-                Nuestros animadores garantizan risas y entretenimiento para todas las edades. ¡La diversión está asegurada!
-            </p>
-        </div>
+        <section class="container my-5">
+            <div class="card border-0 shadow p-5 rounded-4 mx-5">
+                <img src="img/animacion infantil.jpg" alt="Animación infantil" class="card-img-top rounded-top">
+                <div class="card-body text-center">
+                    <h2 class="text-beige mb-3">Animacion profesional</h2>
+                    <p class="card-text fs-5">
+                        Nuestros animadores garantizan risas y entretenimiento para todas las edades. ¡La diversión está
+                        asegurada!
+                    </p>
+                </div>
+            </div>
+        </section>
 
     </main>
     
-    <footer>
-        <p>&copy; 2025 Grupo44. Todos los Derechos Reservados.</p>
-        <p>Dirección: Av. de los Colores 144, Villa Caramelo | Tel: +54 11 1234 5678</p>
-        <p><a href="privacy.html">Política de Privacidad</a> | <a href="terms.html">Términos de Uso</a></p>
-    </footer>   
+    <footer class="text-white text-center py-4 mt-5 bg-beige">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Grupo44. Todos los Derechos Reservados.</p>
+            <p class="mb-2">Dirección: Av. de los Colores 144, Villa Caramelo | Tel: +54 11 1234 5678</p>
+            <p class="mb-0">
+                <a href="privacy.html" class="text-white text-decoration-underline me-2">Política de Privacidad</a> | 
+                <a href="terms.html" class="text-white text-decoration-underline ms-2">Términos de Uso</a>
+            </p>
+        </div>
+    </footer>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
 </html>
