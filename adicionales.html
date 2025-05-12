@@ -2,98 +2,129 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios Adicionales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
 
-  <!-- Menú de navegación -->
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">INICIO</a></li>
-        <li><a href="salones.html">NUESTROS SALONES</a></li>
-        <li><a href="adicionales.html">SERVICIOS ADICIONALES</a></li>
-        <li><a href="infoinst.html">INFORMACION INSTITUCIONAL</a></li>
-        <li><a href="contacto.html">CONTACTO</a></li>
-      </ul>
+<body class="bg-light">
+    <header class="bg-beige">
+    <nav class="navbar navbar-expand-md container">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navContent">
+            <div class="nav nav-underline flex-column flex-md-row gap-5 align-items-center">
+                <a class="nav-link text-white fw-semibold active" href="index.html">INICIO</a>
+                <a class="nav-link text-white fw-semibold" href="salones.html">NUESTROS SALONES</a>
+                <a class="nav-link text-white fw-semibold" href="adicionales.html">SERVICIOS ADICIONALES</a>
+                <a class="nav-link text-white fw-semibold" href="infoinst.html">INFORMACION INSTITUCIONAL</a>
+                <a class="nav-link text-white fw-semibold" href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
     </nav>
-  </header>
+</header>
 
-  <!-- Título principal -->
-  <main>
-    <h1 class="titulo-principal">Servicios adicionales</h1>
+  <main class="container my-5">
+    <h1 class="text-center text-beige mb-5">Servicios Adicionales</h1>
 
-    <!-- Contenedor de servicios -->
-    <section class="servicios-container">
+    <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-      <!-- Servicio 1 -->
-      <div class="servicio">
-        <img src="img/animacion.png" alt="Animación Infantil">
-        <h2>Animación Infantil</h2>
-        <p>Contamos con animadores que organizan juegos, shows y actividades para que todos se diviertan.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/animacion.png" class="card-img-top" alt="Animación Infantil">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Animación Infantil</h5>
+            <p class="card-text">Contamos con animadores que organizan juegos, shows y actividades para que todos se diviertan.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 2 -->
-      <div class="servicio">
-        <img src="img/catering.png" alt="Catering">
-        <h2>Catering</h2>
-        <p>Ofrecemos un servicio de catering con opciones adaptadas para grandes y chicos: menú saludable, dulces y salados.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/catering.png" class="card-img-top" alt="Catering">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Catering</h5>
+            <p class="card-text">Ofrecemos un servicio de catering con opciones adaptadas para grandes y chicos: menú saludable, dulces y salados.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 3 -->
-      <div class="servicio">
-        <img src="img/fotografia.png" alt="Fotografía y Video">
-        <h2>Fotografía y Video</h2>
-        <p>Capturamos los mejores momentos del evento con fotos y videos profesionales para que tengas un recuerdo inolvidable.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/fotografia.png" class="card-img-top" alt="Fotografía y Video">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Fotografía y Video</h5>
+            <p class="card-text">Capturamos los mejores momentos del evento con fotos y videos profesionales para que tengas un recuerdo inolvidable.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 4 -->
-      <div class="servicio">
-        <img src="img/inflables.png" alt="Alquiler de Inflables">
-        <h2>Alquiler de Inflables</h2>
-        <p>Disponemos de inflables seguros y divertidos para todas las edades.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/inflables.png" class="card-img-top" alt="Alquiler de Inflables">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Alquiler de Inflables</h5>
+            <p class="card-text">Disponemos de inflables seguros y divertidos para todas las edades.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 5 -->
-      <div class="servicio">
-        <img src="img/dj.png" alt="Música y DJ">
-        <h2>Música y DJ</h2>
-        <p>Música para todos los eventos.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/dj.png" class="card-img-top" alt="Música y DJ">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Música y DJ</h5>
+            <p class="card-text">Música para todos los eventos.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 6 -->
-      <div class="servicio">
-        <img src="img/decoracion.png" alt="Decoración Temática">
-        <h2>Decoración Temática</h2>
-        <p>Temáticas personalizadas con decoración única y creativa.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/decoracion.png" class="card-img-top" alt="Decoración Temática">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Decoración Temática</h5>
+            <p class="card-text">Temáticas personalizadas con decoración única y creativa.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 7 -->
-      <div class="servicio">
-        <img src="img/cotillon.png" alt="Cotillón">
-        <h2>Cotillón</h2>
-        <p>Cotillón colorido y divertido que complementa la fiesta.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/cotillon.png" class="card-img-top" alt="Cotillón">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Cotillón</h5>
+            <p class="card-text">Cotillón colorido y divertido que complementa la fiesta.</p>
+          </div>
+        </div>
+      </article>
 
-      <!-- Servicio 8 -->
-      <div class="servicio">
-        <img src="img/limpieza.png" alt="Seguridad y Limpieza Adicional">
-        <h2>Seguridad y Limpieza Adicional</h2>
-        <p>Personal adicional para seguridad y limpieza del evento.</p>
-      </div>
+      <article class="col">
+        <div class="card h-100 text-center">
+          <img src="img/limpieza.png" class="card-img-top" alt="Seguridad y Limpieza Adicional">
+          <div class="card-body">
+            <h5 class="card-title text-beige">Seguridad y Limpieza Adicional</h5>
+            <p class="card-text">Personal adicional para seguridad y limpieza del evento.</p>
+          </div>
+        </div>
+      </article>
 
     </section>
   </main>
 
-  <!-- Pie de página -->
-  <footer>
-      <p>&copy; 2025 Grupo44. Todos los Derechos Reservados.</p>
-      <p>Dirección: Av. de los Colores 144, Villa Caramelo | Tel: +54 11 1234 5678</p>
-      <p><a href="privacy.html">Política de Privacidad</a> | <a href="terms.html">Términos de Uso</a></p>
-  </footer>
-  
-
+  <footer class="text-white text-center py-4 mt-5 bg-beige">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 Grupo44. Todos los Derechos Reservados.</p>
+            <p class="mb-2">Dirección: Av. de los Colores 144, Villa Caramelo | Tel: +54 11 1234 5678</p>
+            <p class="mb-0">
+                <a href="privacy.html" class="text-white text-decoration-underline me-2">Política de Privacidad</a> | 
+                <a href="terms.html" class="text-white text-decoration-underline ms-2">Términos de Uso</a>
+            </p>
+        </div>
+    </footer>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
