@@ -23,11 +23,11 @@
     <form class="mb-3 mx-auto w-50" id="loginForm">
 
         <div class="mb-3">
-            <label for="usuario" class="form-label">Usuario</label>
+            <label for="usuario" class="form-label">Usuario ("admin")</label>
             <input type="text" class="form-control" id="usuario" required />
         </div>
         <div class="mb-3">
-            <label for="contrasena" class="form-label">Contrasena</label>
+            <label for="contrasena" class="form-label">Contrasena ("1234")</label>
             <input type="password" class="form-control" id="contrasena" required />
         </div>
         <button type="submit" class="btn btn-info">Ingresar</button>
@@ -51,7 +51,7 @@
 <script>
     if(sessionStorage.getItem('usuario')){
         alert('Este usuario ya esta logueado')
-        window.location.href = '../altaSalon.html';
+        window.location.href = '../adminSalones.html';
     }
     document.getElementById('loginForm').addEventListener('submit', function(event){
         event.preventDefault();
@@ -62,7 +62,7 @@
         if(usuario === 'admin' && pass === '1234') {
             sessionStorage.setItem('usuario', usuario);
             alert('login exitoso');
-            window.location.href = '../altaSalon.html';
+            window.location.href = '../adminSalones.html';
         }   else {
             alert('Usuario o contrasena incorrecta');
         }
