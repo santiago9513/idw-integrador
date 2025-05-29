@@ -25,6 +25,7 @@ form.addEventListener('submit', function(event){
     const salon = {nombre, valor, descripcion};
     const salones = JSON.parse(localStorage.getItem('salones')) || [];  //carga salones o inicializa vacio
     salones.push(salon);    //agrega el salon al arreglo de salones
+    
     localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones
 
     alert(`El nuevo salon tiene los siguientes atributos Nombre: ${nombre}.Precio: ${valor}.Descripcion: ${descripcion}`);
@@ -46,12 +47,16 @@ function mostrarSalones(){
     
     const salones = JSON.parse(localStorage.getItem('salones')) || [];
     
-    salones.forEach((salon) => {
+    salones.forEach((salon, index) => {
         const fila = document.createElement('tr');
         fila.innerHTML = `
         <td>${salon.nombre}</td>
         <td>${salon.valor}</td>
         <td>${salon.descripcion}</td>
+        <td>
+            <button class="btn btn-sm btn-warning me-2" onclick="editarSalon(${index})">Editar</button>
+            <button class="btn btn-sm btn-danger" onclick="eliminarSalon(${index})">Eliminar</button>
+        </td>
         `;
 
         tablaBody.appendChild(fila);
