@@ -3,9 +3,9 @@ function editarSalon(index){
     const salon = salones[index];   //con el index ubico el salon objetivo
 
     //lleno el form con los datos del salon objetivo (listo para editar y guardar como nuevo)
-    document.getElementById('nombre').value = salon.nombre;
-    document.getElementById('valor').value = salon.valor; 
+    document.getElementById('nombre').value = salon.nombre; 
     document.getElementById('descripcion').value = salon.descripcion;
+    document.getElementById('valor').value = salon.valor;
 
     salones.splice(index, 1);   //elimino el salon
     

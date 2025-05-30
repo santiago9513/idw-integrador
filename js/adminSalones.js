@@ -19,8 +19,8 @@ form.addEventListener('submit', function(event){
     event.preventDefault();
 
     const nombre = document.getElementById('nombre').value;
-    const valor = document.getElementById('valor').value; 
     const descripcion = document.getElementById('descripcion').value;
+    const valor = document.getElementById('valor').value; 
 
     const salon = {nombre, valor, descripcion};
     const salones = JSON.parse(localStorage.getItem('salones')) || [];  //carga salones o inicializa vacio
@@ -51,8 +51,8 @@ function mostrarSalones(){
         const fila = document.createElement('tr');
         fila.innerHTML = `
         <td>${salon.nombre}</td>
-        <td>${salon.valor}</td>
         <td>${salon.descripcion}</td>
+        <td>${salon.valor}</td>
         <td>
             <button class="btn btn-sm btn-warning me-2" onclick="editarSalon(${index})">Editar</button>
             <button class="btn btn-sm btn-danger me-2" onclick="eliminarSalon(${index})">Eliminar</button>
