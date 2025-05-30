@@ -9,7 +9,7 @@ const salir = document.getElementById('logout');
 if(salir) {
     salir.addEventListener('click', () => {
         sessionStorage.clear();
-        window.location.href = 'js/login.html';
+        window.location.href = 'salones.html';
     });
 }
 
