@@ -51,13 +51,13 @@ function mostrarSalones(){
     salones.forEach((salon, index) => {
         const fila = document.createElement('tr');
         fila.innerHTML = `
-        <td><img src="${salon.imagen}" alt="${salon.nombre}" style="width: 80px; height: auto;"></td>
-        <td>${salon.nombre}</td>
+        <td class="text-center"><img src="${salon.imagen}" alt="${salon.nombre}" style="width: 100px; height: 100px;"></td>
+        <td class="text-center">${salon.nombre}</td>
         <td>${salon.descripcion}</td>
-        <td>${salon.valor}</td>
-        <td>
-            <button class="btn btn-sm btn-warning me-2" onclick="editarSalon(${index})">Editar</button>
-            <button class="btn btn-sm btn-danger me-2" onclick="eliminarSalon(${index})">Eliminar</button>
+        <td class="text-center">$${salon.valor}</td>
+        <td class="text-center">
+            <button class="btn btn-sm btn-warning m-3" onclick="editarSalon(${index})">Editar</button>
+            <button class="btn btn-sm btn-danger m-3" onclick="eliminarSalon(${index})">Eliminar</button>
         </td>
         `;
 
