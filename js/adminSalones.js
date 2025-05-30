@@ -28,7 +28,7 @@ form.addEventListener('submit', function(event){
     
     localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones
 
-    alert(`El nuevo salon tiene los siguientes atributos Nombre: ${nombre}.Precio: ${valor}.Descripcion: ${descripcion}`);
+    alert(`Cambios guardados con exito!`);
 
     this.reset();   //limpia el formulario despues de enviarlo
 
