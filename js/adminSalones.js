@@ -55,7 +55,7 @@ function mostrarSalones(){
         <td>${salon.descripcion}</td>
         <td>
             <button class="btn btn-sm btn-warning me-2" onclick="editarSalon(${index})">Editar</button>
-            <button class="btn btn-sm btn-danger" onclick="eliminarSalon(${index})">Eliminar</button>
+            <button class="btn btn-sm btn-danger me-2" onclick="eliminarSalon(${index})">Eliminar</button>
         </td>
         `;
 
