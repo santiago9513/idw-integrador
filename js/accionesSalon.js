@@ -6,6 +6,7 @@ function editarSalon(index){
     document.getElementById('nombre').value = salon.nombre; 
     document.getElementById('descripcion').value = salon.descripcion;
     document.getElementById('valor').value = salon.valor;
+    document.getElementById('imagen').value = salon.imagen;
 
     salones.splice(index, 1);   //elimino el salon
     

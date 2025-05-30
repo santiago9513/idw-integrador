@@ -38,9 +38,14 @@
             <label for="descripcion" class="form-label">Breve descripcion</label>
             <textarea type="text" class="form-control" id="descripcion" rows="5" required></textarea>
         </div>
+        <div class="mb-3">
+            <label for="imagen" class="form-label">URL de la imagen</label>
+            <input type="text" class="form-control" id="imagen" placeholder="img/salonDefault.png">
+        </div>
         <div class="d-flex justify-content-between">
             <button type="submit" class="btn btn-info">Guardar</button>
         </div>
+
     </form>
 
     <section class="mb-5 p-5">
@@ -49,6 +54,7 @@
         <table class="table table-striped mt-3" id="tablaSalones">
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Nombre</th>
                     <th class="w-50">Descripcion</th>
                     <th>Valor</th>
