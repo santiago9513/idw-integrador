@@ -32,12 +32,23 @@
             <input type="text" class="form-control" id="nombre" required />
         </div>
         <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" required />
+        </div>
+        <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
             <input type="number" class="form-control" id="valor" required />
         </div>
         <div class="mb-3">
             <label for="descripcion" class="form-label">Breve descripcion</label>
             <textarea type="text" class="form-control" id="descripcion" rows="5" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select" id="estado" required>
+                <option value="Disponible" selected>Disponible</option>
+                <option value="Reservado">Reservado</option>
+            </select>
         </div>
         <div class="mb-3">
             <label for="imagen" class="form-label">URL local de la imagen</label>
@@ -57,8 +68,10 @@
                 <tr>
                     <th class="text-center">Imagen</th>
                     <th class="text-center">Nombre</th>
+                    <th class="text-center">Direccion</th>
                     <th class="w-50 text-center">Descripcion</th>
                     <th class="text-center">Valor</th>
+                    <th class="text-center">Estado</th>
                     <th class="text-center">Acciones</th>
                 </tr>
             </thead>

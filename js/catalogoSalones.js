@@ -3,8 +3,10 @@
 const salonesIniciales = [
   {
     nombre: "Salón Aire Libre",
+    direccion: "San Martin 1500",
     descripcion: "Un espacio fresco y natural, ideal para eventos al aire libre, con juegos interactivos y áreas verdes para disfrutar del aire libre en cualquier ocasión.",
     valor: 35000,
+    estado: "Reservado",
     imagen: "img/ImagenSalonAireLibre.jpg"
   },
   {
@@ -55,9 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     article.innerHTML = `
       <div class="card h-100">
         <img src="${salon.imagen || 'img/salonDefault.png'}" class="card-img-top" alt="Imagen de ${salon.nombre}">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">${salon.nombre}</h5>
           <p class="card-text">${salon.descripcion}</p>
+          <p class="card-text"><strong>Dirección:</strong> ${salon.direccion}</p>
+          <p class="card-text text-center mt-auto"><span class="badge fs-6 bg-${salon.estado === 'Disponible' ? 'success' : 'danger'}">${salon.estado}</span></p>
         </div>
         <div class="card-footer">
           <p class="fw-bold mb-0">Precio: $${Number(salon.valor).toLocaleString()}</p>
