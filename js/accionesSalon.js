@@ -16,12 +16,15 @@ function editarSalon(index){
 }
 
 function eliminarSalon(index){
-    const salones = JSON.parse(localStorage.getItem('salones')) || [];  //cargo salones del localstorage
-    const salon = salones[index];   //con el index ubico el salon objetivo
-
-    salones.splice(index, 1);   //elimino el salon
-
-    localStorage.setItem('salones', JSON.stringify(salones)); //guardo en localstorage
     
-    mostrarSalones();   //muestro en tabla
+    const salones = JSON.parse(localStorage.getItem('salones')) || [];  //cargo salones del localstorage
+    
+    if (confirm(`Esta seguro de eliminar el salon "${salones[index].nombre}"?`)){
+        salones.splice(index, 1);   //elimino el salon
+        localStorage.setItem('salones', JSON.stringify(salones)); //guardo en localstorage
+        mostrarSalones();   //muestro en tabla
+    }
 }
+
+
+
