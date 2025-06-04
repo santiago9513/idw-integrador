@@ -4,15 +4,13 @@ function editarSalon(index){
 
     //lleno el form con los datos del salon objetivo (listo para editar y guardar como nuevo)
     document.getElementById('nombre').value = salon.nombre; 
+    document.getElementById('direccion').value = salon.direccion;
     document.getElementById('descripcion').value = salon.descripcion;
     document.getElementById('valor').value = salon.valor;
+    document.getElementById('estado').value = salon.estado;
     document.getElementById('imagen').value = salon.imagen;
 
-    salones.splice(index, 1);   //elimino el salon
-    
-    localStorage.setItem('salones', JSON.stringify(salones)); //guardo en localstorage
-    
-    mostrarSalones();   //muestro en tabla
+    indiceEditar = index;
 }
 
 function eliminarSalon(index){

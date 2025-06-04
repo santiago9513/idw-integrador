@@ -1,3 +1,5 @@
+let indiceEditar = null; //Variable bandera 
+
 document.addEventListener('DOMContentLoaded', () =>{
 if(!sessionStorage.getItem('usuario')){
         alert('Debe loguearse')
@@ -26,12 +28,22 @@ form.addEventListener('submit', function(event){
     const imagen = document.getElementById('imagen').value || 'img/salonDefault.png';   //si se deja vacio carga imagen default
 
     const salon = {nombre, direccion, valor, descripcion, estado, imagen};
+    
     const salones = JSON.parse(localStorage.getItem('salones')) || [];  //carga salones o inicializa vacio
-    salones.push(salon);    //agrega el salon al arreglo de salones
+    
+    if (indiceEditar !== null) {
+        //  Entra a modo edicion
+        salones[indiceEditar] = salon;
+        alert(`Salon editado: ${nombre}`);
+        indiceEditar = null;    //Vuelve modo alta nuevo
+    } else {
+        //Modo alta
+        salones.push(salon);
+        alert(`Salon agregado: ${nombre}`);
+    }
+        //agrega el salon al arreglo de salones
     
     localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones
-
-    alert(`Cambios guardados con exito!`);
 
     this.reset();   //limpia el formulario despues de enviarlo
 
