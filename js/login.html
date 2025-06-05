@@ -45,27 +45,10 @@
         </div>
     </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
 </body>
-<script>
-    if(sessionStorage.getItem('usuario')){
-        alert('Este usuario ya esta logueado')
-        window.location.href = '../adminSalones.html';
-    }
-    document.getElementById('loginForm').addEventListener('submit', function(event){
-        event.preventDefault();
 
-        const usuario = document.getElementById('usuario').value;
-        const pass = document.getElementById('contrasena').value;
+<script type="module" src="login.js"></script>
 
-        if(usuario === 'admin' && pass === '1234') {
-            sessionStorage.setItem('usuario', usuario);
-            alert('login exitoso');
-            window.location.href = '../adminSalones.html';
-        }   else {
-            alert('Usuario o contrasena incorrecta');
-        }
-    });
-</script>
 </html>
