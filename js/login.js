@@ -1,4 +1,4 @@
-import { login } from './auth.js'
+import { login } from './auth.js';
 
 document.getElementById('loginForm').addEventListener('submit', async function(event){
     event.preventDefault();
