@@ -9,7 +9,8 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const usuarioValidado = await login(usuario,pass);
     
     if(usuarioValidado) {
-        sessionStorage.setItem('usuario', usuario);
+        sessionStorage.setItem('usuario', usuarioValidado.username);
+        sessionStorage.setItem('usuario', usuarioValidado.accessToken);
         alert('Login exitoso');
         window.location.href = '../adminSalones.html';
     }   else {

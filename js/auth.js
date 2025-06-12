@@ -1,11 +1,23 @@
 export async function login(usuario, contrasena) {
     try {
-        const response = await fetch('../utils/user.json');
-        const usuarios = await response.json();
+        const response = await fetch('https://dummyjson.com/auth/login', {
+            method : 'POST',
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                username: usuario,
+                password: contrasena
+            })
+        });
+        if(!response.ok){
+            console.error('Credenciales incorrectas');
+            return false;
+        }
 
-        const userOk = usuarios.find(u => u.usuario === usuario && u.contrasena === contrasena);
+        const data = await response.json();
 
-        return userOk !== undefined;
+        return data;
     
     } catch (error) {
         console.error('Error en la solicitud');
