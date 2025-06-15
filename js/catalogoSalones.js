@@ -1,6 +1,6 @@
 
 //creo los salones default y los guardo en localstorage
-const salonesIniciales = [
+const salonesDefault = [
   {
     nombre: "Salón Aire Libre",
     direccion: "San Martin 456",
@@ -52,7 +52,7 @@ const salonesIniciales = [
 ];
 
 if (!localStorage.getItem('salones')) {
-  localStorage.setItem('salones', JSON.stringify(salonesIniciales));
+  localStorage.setItem('salones', JSON.stringify(salonesDefault));
 }
 
 //cargo salones al catalogo
