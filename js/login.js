@@ -12,7 +12,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         sessionStorage.setItem('usuario', usuarioValidado.username);
         sessionStorage.setItem('usuario', usuarioValidado.accessToken);
         alert('Login exitoso');
-        window.location.href = '../adminSalones.html';
+        window.location.href = '../index.html';
     }   else {
         alert('Usuario o contrasena incorrecta');
     }
