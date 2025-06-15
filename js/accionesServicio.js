@@ -9,6 +9,8 @@ function editarServicio(index){
     document.getElementById('imagen').value = servicio.imagen;
 
     indiceEditar = index;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });    //Desplaza la pagina hacia arriba (form)
 }
 
 function eliminarServicio(index){

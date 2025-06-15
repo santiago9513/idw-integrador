@@ -11,6 +11,8 @@ function editarSalon(index){
     document.getElementById('imagen').value = salon.imagen;
 
     indiceEditar = index;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });    //Desplaza la pagina hacia arriba (form)
 }
 
 function eliminarSalon(index){
