@@ -10,7 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     
     if(usuarioValidado) {
         sessionStorage.setItem('usuario', usuarioValidado.username);
-        sessionStorage.setItem('usuario', usuarioValidado.accessToken);
+        sessionStorage.setItem('token', usuarioValidado.token);
         alert('Login exitoso');
         window.location.href = '../index.html';
     }   else {
