@@ -41,7 +41,7 @@ form.addEventListener('submit', function(event){
     }
         //agrega el servicio al arreglo de servicios
     
-    localStorage.setItem('servicio', JSON.stringify(servicios))    //guarda los servicios
+    localStorage.setItem('servicios', JSON.stringify(servicios))    //guarda los servicios
 
     this.reset();   //limpia el formulario despues de enviarlo
 
