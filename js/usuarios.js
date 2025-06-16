@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     if (!sessionStorage.getItem('usuario')) {
         alert('Debe loguearse');
         window.location.href = "js/login.html";
@@ -12,20 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'index.html';
         });
     }
-});
 
-    document.addEventListener('DOMContentLoaded', async () => {
-        const tabla = document.querySelector('#tablaUsuarios tbody');
+    const tabla = document.querySelector('#tablaUsuarios tbody');
 
-        try {
-            const response = await fetch('https://dummyjson.com/users');
-            if (response.ok) {
-                const data = await response.json();
-                const usuarios = data.users;
+    try {
+        const response = await fetch('https://dummyjson.com/users');
+        if (response.ok) {
+            const data = await response.json();
+            const usuarios = data.users;
 
-                usuarios.forEach((usuario) => {
-                    const fila = document.createElement('tr');
-                    fila.innerHTML = `
+            usuarios.forEach((usuario) => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
                     <td>${usuario.firstName}</td>
                     <td>${usuario.lastName}</td>
                     <td>${usuario.age}</td>
@@ -33,15 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${usuario.address.city}</td>
                 `;
 
-                    tabla.appendChild(fila);
-                });
-            } else {
-                console.error(response.status);
-                throw Error("Error al consultar")
-            }
+                tabla.appendChild(fila);
+            });
+        } else {
+            console.error(response.status);
+            throw Error("Error al consultar")
+        }
 
-        } catch (error) {
-            console.error("Error: ", error);
-            alert("Error con la api de usuarios");
-        };
-    });
+    } catch (error) {
+        console.error("Error: ", error);
+        alert("Error con la api de usuarios");
+    };
+});
