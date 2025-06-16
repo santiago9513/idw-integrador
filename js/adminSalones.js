@@ -2,7 +2,7 @@ let indiceEditar = null; //Variable bandera
 
 document.addEventListener('DOMContentLoaded', () =>{
 if(!sessionStorage.getItem('usuario')){
-        alert('Debe loguearse')
+        alert('Debe loguearse');
         window.location.href = "js/login.html";
         return;
 }

@@ -3,11 +3,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const loginBoton = document.getElementById('login');
     const logoutBoton = document.getElementById('logout');
     const adminBoton = document.getElementById('admin');
+    const usuariosBoton = document.getElementById('usuarios');
 
     if (usuario) {
         mostrar(adminBoton);
         ocultar(loginBoton);
         mostrar(logoutBoton);
+        mostrar(usuariosBoton);
 
         if (logoutBoton) {
             logoutBoton.addEventListener('click', () => {
@@ -19,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
         mostrar(loginBoton);
         ocultar(logoutBoton);
         ocultar(adminBoton);
+        ocultar(usuariosBoton);
     }
 });
 
