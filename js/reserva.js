@@ -83,7 +83,7 @@ form.addEventListener('submit', function (event) {
     }
     resumen += `\nTotal: $${total}`;
 
-    const confirmado = confirm(resumen + '\n\n¿Confirmar la reserva?');
+    const confirmado = confirm(resumen + '\n\nConfirmar la reserva?');
 
     if (confirmado) {
         // Actualizo localstorage con salon reservado
