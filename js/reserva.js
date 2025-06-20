@@ -11,8 +11,9 @@ function renderizarSalones(){
     tablaBody.innerHTML = '';
 
     salones.forEach((salon, index) => {
+
+        //Renderizo lista de salones disponibles como opciones en el form
         if (salon.estado === "Disponible") {
-            //Renderizo lista de salones disponibles como opciones en el form
             const opcion = document.createElement('option');
             opcion.value = salon.nombre;
             opcion.textContent = `${salon.nombre} ($${salon.valor})`;
@@ -59,21 +60,10 @@ form.addEventListener('submit', function (event) {
     const servicios = JSON.parse(localStorage.getItem('servicios')) || [];
 
     // Capturo salon seleccionado
-    const salonSeleccionadoNombre = selecSalon.value;
-    if (!salonSeleccionadoNombre) {
-        alert('Por favor, seleccione un salon');
-        return;
-    }
-
-    const salonSeleccionado = salones.find(s => s.nombre === salonSeleccionadoNombre);
-    if (!salonSeleccionado) {
-        alert('Salón no encontrado');
-        return;
-    }
+    const salonSeleccionado = salones.find(s => s.nombre === selecSalon.value);
 
     // Capturo servicios seleccionados
-    const serviciosSeleccionados = Array.from(document.querySelectorAll('input[name="servicios"]:checked')).map(checkbox => checkbox.value);
-    const serviciosElegidos = servicios.filter(servicio => serviciosSeleccionados.includes(servicio.nombre));
+    const serviciosElegidos = servicios.filter(s => document.querySelector(`input[name="servicios"][value="${s.nombre}"]`).checked);
 
     // Calculo valor total
     let total = parseFloat(salonSeleccionado.valor);
@@ -83,7 +73,7 @@ form.addEventListener('submit', function (event) {
 
     // Muestro resumen 
     let resumen = `Salón: ${salonSeleccionado.nombre} ($${salonSeleccionado.valor})\n`;
-    resumen += `Servicios:\n`;
+    resumen += `\nServicios:\n`;
     if (serviciosElegidos.length === 0) {
         resumen += `- Sin servicios adicionales\n`;
     } else {
@@ -91,19 +81,23 @@ form.addEventListener('submit', function (event) {
             resumen += `- ${servicio.nombre} ($${servicio.valor})\n`;
         });
     }
-    resumen += `Total: $${total}`;
+    resumen += `\nTotal: $${total}`;
 
-    alert(resumen);
+    const confirmado = confirm(resumen + '\n\n¿Confirmar la reserva?');
 
-    // Actualizo localstorage con salon reservado y renderizo
-    const indexSalon = salones.findIndex(s => s.nombre === salonSeleccionadoNombre);
-    if (indexSalon !== -1) {
-        salones[indexSalon].estado = "Reservado";
-        localStorage.setItem('salones', JSON.stringify(salones));
+    if (confirmado) {
+        // Actualizo localstorage con salon reservado
+        const indexSalon = salones.findIndex(s => s === salonSeleccionado);
+        if (indexSalon !== -1) {
+            salones[indexSalon].estado = "Reservado";
+            localStorage.setItem('salones', JSON.stringify(salones));
+        }
+
         renderizarSalones();
-    }
-
-    form.reset();
+        form.reset();
+        } else {
+            alert('Reserva cancelada.');
+        }
 });
 
 renderizarSalones();
