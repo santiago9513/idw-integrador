@@ -1,6 +1,3 @@
-
-BOTON "ADMIN" EN SECCION SALONES (USUARIO: "admin" / CONTRASENA: "1234")
-
 Integrantes del grupo:
 
 - Santiago Carro

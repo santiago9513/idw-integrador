@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    mostrarSalones()
+    mostrarSalones();
 });
 
 function mostrarSalones() {
