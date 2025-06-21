@@ -1,13 +1,14 @@
-let indiceEditar = null; //Variable bandera 
+let indiceEditar = null; //Variable bandera, guarda indice del salon a editar o null si es un alta 
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (!sessionStorage.getItem('usuario')) {
+document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM este cargado
+    
+    if (!sessionStorage.getItem('usuario')) {   //Si no hay usuario logueado, redirige a login.html
         alert('Debe loguearse');
         window.location.href = "js/login.html";
         return;
     }
 
-    const salir = document.getElementById('logout');
+    const salir = document.getElementById('logout');    // Boton salir, borra la sesion y redirige a salones.html
     if (salir) {
         salir.addEventListener('click', () => {
             sessionStorage.clear();
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
+        //obtiene los valores ingresadosa en el form
         const nombre = document.getElementById('nombre').value;
         const direccion = document.getElementById('direccion').value;
         const descripcion = document.getElementById('descripcion').value;
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         //agrega el salon al arreglo de salones
 
-        localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones
+        localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones en localstorage
 
         this.reset();   //limpia el formulario despues de enviarlo
 
@@ -54,15 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarSalones();
 });
 
+//Renderiza salones en una tabla
 function mostrarSalones() {
 
     const tablaBody = document.querySelector('#tablaSalones tbody');
 
-    tablaBody.innerHTML = '';
+    tablaBody.innerHTML = '';   //Limpia la tabla
 
     const salones = JSON.parse(localStorage.getItem('salones')) || [];
 
-    salones.forEach((salon, index) => {
+    salones.forEach((salon, index) => { //Renderiza en la tabla cada salon del arreglo de salones
         const fila = document.createElement('tr');
         fila.innerHTML = `
         <td class="text-center"><img src="${salon.imagen}" alt="${salon.nombre}" style="width: 100px; height: 100px;"></td>

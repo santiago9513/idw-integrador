@@ -1,13 +1,14 @@
-let indiceEditar = null; //Variable bandera 
+let indiceEditar = null; //Variable bandera, guarda indice del salon a editar o null si es un alta
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (!sessionStorage.getItem('usuario')) {
+document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM este cargado
+    
+    if (!sessionStorage.getItem('usuario')) {   //Si no hay usuario logueado, redirige a login.html
         alert('Debe loguearse');
         window.location.href = "js/login.html";
         return;
     }
 
-    const salir = document.getElementById('logout');
+    const salir = document.getElementById('logout');    // Boton salir, borra la sesion y redirige a servicios.html
     if (salir) {
         salir.addEventListener('click', () => {
             sessionStorage.clear();
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
+        //obtiene los valores ingresadosa en el form
         const nombre = document.getElementById('nombre').value;
         const descripcion = document.getElementById('descripcion').value;
         const valor = document.getElementById('valor').value;
@@ -52,15 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarServicios()
 });
 
+//Renderiza salones en una tabla
 function mostrarServicios() {
 
     const tablaBody = document.querySelector('#tablaServicios tbody');
 
-    tablaBody.innerHTML = '';
+    tablaBody.innerHTML = '';   //Limpia la tabla
 
     const servicios = JSON.parse(localStorage.getItem('servicios')) || [];
 
-    servicios.forEach((servicio, index) => {
+    servicios.forEach((servicio, index) => {    //Renderiza en la tabla cada servicio del arreglo de servicios
         const fila = document.createElement('tr');
         fila.innerHTML = `
         <td class="text-center"><img src="${servicio.imagen}" alt="${servicio.nombre}" style="width: 100px; height: 100px;"></td>

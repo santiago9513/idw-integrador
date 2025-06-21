@@ -1,10 +1,12 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => { //Espera que el DOM este cargado
+
     const usuario = sessionStorage.getItem('usuario');
     const loginBoton = document.getElementById('login');
     const logoutBoton = document.getElementById('logout');
     const adminBoton = document.getElementById('admin');
     const usuariosBoton = document.getElementById('usuarios');
 
+    //Si esta logueado: muestra boton admin, usuarios, logout y oculta login
     if (usuario) {
         mostrar(adminBoton);
         ocultar(loginBoton);
@@ -17,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'index.html';
             });
         }
+    //Sino: muestra boton login y oculta admin, logout y usuarios   
     } else {
         mostrar(loginBoton);
         ocultar(logoutBoton);
@@ -25,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//Oculta los botones con display-none
 function mostrar(boton) {
     if (boton) boton.classList.remove('d-none');
 }

@@ -1,4 +1,4 @@
-//creo los servicios default y los guardo en localstorage
+//crea los servicios default y los guarda en localstorage
 const serviciosDefault = [
   {
     nombre: "Animación Infantil",
@@ -44,15 +44,17 @@ const serviciosDefault = [
   }
 ];
 
+//Si no hay datos en el localstorage, carga los servicios default
 if (!localStorage.getItem('servicios')) {
   localStorage.setItem('servicios', JSON.stringify(serviciosDefault));
 }
 
-//cargo servicios al catalogo
+//carga servicios al catalogo (renderiza)
 document.addEventListener('DOMContentLoaded', () => {
   const catalogo = document.getElementById('catalogoServicios');
   const servicios = JSON.parse(localStorage.getItem('servicios')) || [];
 
+  //Recorre cada servicio del arreglo y genera una card para el catalogo
   servicios.forEach(servicio => {
     const article = document.createElement('article');
     article.className = 'col';

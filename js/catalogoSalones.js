@@ -1,5 +1,5 @@
 
-//creo los salones default y los guardo en localstorage
+//crea los salones default y los guarda en localstorage
 const salonesDefault = [
   {
     nombre: "Salón Aire Libre",
@@ -51,15 +51,17 @@ const salonesDefault = [
   }
 ];
 
+//Si no hay datos en el localstorage, carga los salones default
 if (!localStorage.getItem('salones')) {
   localStorage.setItem('salones', JSON.stringify(salonesDefault));
 }
 
-//cargo salones al catalogo
-document.addEventListener('DOMContentLoaded', () => {
+//carga salones al catalogo (renderiza)
+document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM este cargado
   const catalogo = document.getElementById('catalogoSalones');
   const salones = JSON.parse(localStorage.getItem('salones')) || [];
 
+  //Recorre cada salon del arreglo y genera una card para el catalogo
   salones.forEach(salon => {
     const article = document.createElement('article');
     article.className = 'col';
