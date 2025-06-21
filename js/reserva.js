@@ -73,7 +73,7 @@ form.addEventListener('submit', function (event) {
     });
 
     // Muestra resumen y confirmacion
-    let resumen = `Salon: ${salonSeleccionado.nombre} ($${salonSeleccionado.valor})\n`;
+    let resumen = `Salon:\n - ${salonSeleccionado.nombre} ($${salonSeleccionado.valor})\n`;
 
     resumen += `\nServicios:\n`;
 
@@ -99,6 +99,7 @@ form.addEventListener('submit', function (event) {
         renderizarSalones();
         form.reset();
 
+        //Si la reserva se cancela, no se guarda el estado de reserva del salon
         } else {
             alert('Reserva cancelada.');
         }
