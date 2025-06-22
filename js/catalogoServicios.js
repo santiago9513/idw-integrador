@@ -52,25 +52,28 @@ if (!localStorage.getItem('servicios')) {
 //carga servicios al catalogo (renderiza)
 document.addEventListener('DOMContentLoaded', () => {
   const catalogo = document.getElementById('catalogoServicios');
+  
+  if (!catalogo) return;  // Si la pagina no tiene el contenedor del catalogo, no se debe renderizar nada
+                          // Este script puede ser importado desde reservas.html para cargar los servicios adicionales default en localstorage
+
   const servicios = JSON.parse(localStorage.getItem('servicios')) || [];
 
   //Recorre cada servicio del arreglo y genera una card para el catalogo
   servicios.forEach(servicio => {
     const article = document.createElement('article');
     article.className = 'col';
-
     article.innerHTML = `
-      <div class="card h-100">
-        <img src="${servicio.imagen || 'img/salonDefault.png'}" class="card-img-top" alt="Imagen de ${servicio.nombre}">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">${servicio.nombre}</h5>
-          <p class="card-text">${servicio.descripcion}</p>
-        </div>
-        <div class="card-footer">
-          <p class="fw-bold mb-0">Precio: $${Number(servicio.valor).toLocaleString()}</p>
-        </div>
-      </div>
-    `;
+          <div class="card h-100">
+            <img src="${servicio.imagen || 'img/salonDefault.png'}" class="card-img-top" alt="Imagen de ${servicio.nombre}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${servicio.nombre}</h5>
+              <p class="card-text">${servicio.descripcion}</p>
+            </div>
+            <div class="card-footer">
+              <p class="fw-bold mb-0">Precio: $${Number(servicio.valor).toLocaleString()}</p>
+            </div>
+          </div>
+        `;
 
     catalogo.appendChild(article);
   });
