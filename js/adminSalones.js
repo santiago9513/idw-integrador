@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM es
 
     const form = document.getElementById('formSalon');
 
+    mostrarSalones();
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -52,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM es
         mostrarSalones();
 
     });
-
-    mostrarSalones();
 });
 
 //Renderiza salones en una tabla
