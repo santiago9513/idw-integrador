@@ -1,4 +1,4 @@
-
+const imagenes = JSON.parse(localStorage.getItem('imagenes')) || [];
 //crea los salones default y los guarda en localstorage
 const salonesDefault = [
   {
@@ -8,7 +8,7 @@ const salonesDefault = [
     descripcion: "Un espacio fresco y natural, ideal para eventos al aire libre, con juegos interactivos y áreas verdes para disfrutar del aire libre en cualquier ocasión.",
     valor: 35000,
     estado: "Reservado",
-    imagen: "img/ImagenSalonAireLibre.jpg"
+    imagen: obtenerRutaImagen(0)
   },
   {
     id: 1,
@@ -17,7 +17,7 @@ const salonesDefault = [
     descripcion: "Un salón lleno de emociones y diversión, con juegos para escalar y moverse. Perfecto para niños inquietos.",
     valor: 40000,
     estado: "Disponible",
-    imagen: "img/ImagenSalonAventura.jpg"
+    imagen: obtenerRutaImagen(1)
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const salonesDefault = [
     descripcion: "Inspirado en cuentos, con rincón de lectura y decoración mágica.",
     valor: 38000,
     estado: "Disponible",
-    imagen: "img/ImagenSalonCuento.jpg"
+    imagen: obtenerRutaImagen(2)
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const salonesDefault = [
     descripcion: "Un ambiente exótico inspirado en la naturaleza, te invita a jugar y divertirte.",
     valor: 37000,
     estado: "Disponible",
-    imagen: "img/ImagenSalonSelva.jpg"
+    imagen: obtenerRutaImagen(3)
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const salonesDefault = [
     descripcion: "Ofrece un entorno cálido, natural y lleno de encanto. La protagonista: una gran casita estilo granja, rodeada de aire libre y decoración campestre, donde los peques pueden jugar, explorar y conectarse con lo simple y lo lindo de la infancia.",
     valor: 60000,
     estado: "Reservado",
-    imagen: "img/ImagenSalonFarmHouse.jpg"
+    imagen: obtenerRutaImagen(4)
   },
   {
     id: 5,
@@ -53,9 +53,14 @@ const salonesDefault = [
     descripcion: "Diseñado especialmente para bebés de 0 a 2 años, con espacios seguros, suaves y estimulantes para que descubran el mundo a su ritmo. Juegos sensoriales, colores suaves, rincones de exploración y mucho amor en cada detalle.",
     valor: 50000,
     estado: "Disponible",
-    imagen: "img/ImagenSalonBaby.jpg"
+    imagen: obtenerRutaImagen(5)
   }
 ];
+
+function obtenerRutaImagen(idSalon) {
+  const img = imagenes.find(imagen => imagen.idSalon === idSalon);
+  return img.ruta;
+}
 
 //Si no hay datos en el localstorage, carga los salones default
 if (!localStorage.getItem('salones')) {

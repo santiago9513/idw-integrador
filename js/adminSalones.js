@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM es
         const imagen = document.getElementById('imagen').value || 'img/salonDefault.png';   //si se deja vacio carga imagen default
 
         const salones = JSON.parse(localStorage.getItem('salones')) || [];  //carga salones o inicializa vacio
+        const imagenes = JSON.parse(localStorage.getItem('imagenes')) || [];
 
         if (indiceEditar !== null) {
         // Modo edicion
@@ -52,14 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM es
 
         if (indiceEditar !== null) {
             salones[indiceEditar] = salon;
+
+            const indexImagen = imagenes.findIndex(img => img.idSalon === id)
+            imagenes[indexImagen].ruta = imagen;
+
             indiceEditar = null;
         } else {
             salones.push(salon);
+
+            let idImagen;
+            const idsImg = imagenes.map(img => img.id);
+            if (idsImg.length > 0) {
+                idImagen = Math.max(...idsImg) + 1;
+            } else {
+                idImagen = 0;
+            }
+            imagenes.push({
+                id: idImagen,
+                idSalon: id,
+                ruta: imagen
+            });
         }
 
-        //agrega el salon al arreglo de salones
 
-        localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones en localstorage
+
+        //agrega el salon al arreglo de salones
+        localStorage.setItem('imagenes', JSON.stringify(imagenes));
+        localStorage.setItem('salones', JSON.stringify(salones))    
 
         this.reset();   //limpia el formulario despues de enviarlo
 

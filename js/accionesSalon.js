@@ -17,12 +17,19 @@ function editarSalon(id) {
 }
 
 function eliminarSalon(id) {
+    const imagenes = JSON.parse(localStorage.getItem('imagenes')) || [];
 
     const salones = JSON.parse(localStorage.getItem('salones')) || [];  //carga salones del localstorage
     const index = salones.findIndex(s => s.id === id);
 
     if (confirm(`Esta seguro de eliminar el salon "${salones[index].nombre}"?`)) {
+        
         salones.splice(index, 1);   //elimina el salon
+
+        const indexImagen = imagenes.findIndex(img => img.idSalon === id);
+        imagenes.splice(indexImagen, 1);    //elimina imagen
+
+        localStorage.setItem('imagenes', JSON.stringify(imagenes));
         localStorage.setItem('salones', JSON.stringify(salones)); //guarda en localstorage
         mostrarSalones();   //muestra en tabla
     }
