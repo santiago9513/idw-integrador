@@ -31,20 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM es
         const estado = document.getElementById('estado').value;
         const imagen = document.getElementById('imagen').value || 'img/salonDefault.png';   //si se deja vacio carga imagen default
 
-        const salon = { nombre, direccion, valor, descripcion, estado, imagen };
-
         const salones = JSON.parse(localStorage.getItem('salones')) || [];  //carga salones o inicializa vacio
 
         if (indiceEditar !== null) {
-            //  Entra a modo edicion
-            salones[indiceEditar] = salon;
+        // Modo edicion
+            id = salones[indiceEditar].id;
             alert(`Salon editado: ${nombre}`);
-            indiceEditar = null;    //Vuelve modo alta nuevo
         } else {
-            //Modo alta
-            salones.push(salon);
+            // Modo alta
+            const ids = salones.map(s => s.id);
+            if (ids.length > 0) {
+                id = Math.max(...ids) + 1;
+            } else {
+                id = 0;
+            }
             alert(`Salon agregado: ${nombre}`);
         }
+
+        const salon = { id, nombre, direccion, valor, descripcion, estado, imagen };
+
+        if (indiceEditar !== null) {
+            salones[indiceEditar] = salon;
+            indiceEditar = null;
+        } else {
+            salones.push(salon);
+        }
+
         //agrega el salon al arreglo de salones
 
         localStorage.setItem('salones', JSON.stringify(salones))    //guarda los salones en localstorage
@@ -65,7 +77,7 @@ function mostrarSalones() {
 
     const salones = JSON.parse(localStorage.getItem('salones')) || [];
 
-    salones.forEach((salon, index) => { //Renderiza en la tabla cada salon del arreglo de salones
+    salones.forEach((salon) => { //Renderiza en la tabla cada salon del arreglo de salones
         const fila = document.createElement('tr');
         fila.innerHTML = `
         <td class="text-center"><img src="${salon.imagen}" alt="${salon.nombre}" style="width: 100px; height: 100px;"></td>
@@ -75,8 +87,8 @@ function mostrarSalones() {
         <td class="text-center">$${salon.valor}</td>
         <td class="text-center">${salon.estado}</td>
         <td class="text-center">
-            <button class="btn btn-sm btn-warning m-3" onclick="editarSalon(${index})">Editar</button>
-            <button class="btn btn-sm btn-danger m-3" onclick="eliminarSalon(${index})">Eliminar</button>
+            <button class="btn btn-sm btn-warning m-3" onclick="editarSalon(${salon.id})">Editar</button>
+            <button class="btn btn-sm btn-danger m-3" onclick="eliminarSalon(${salon.id})">Eliminar</button>
         </td>
         `;
 
