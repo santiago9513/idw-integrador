@@ -1,42 +1,49 @@
 //crea los servicios default y los guarda en localstorage
 const serviciosDefault = [
   {
+    id: 0,
     nombre: "Animación Infantil",
     descripcion: "Contamos con animadores que organizan juegos, shows y actividades para que todos se diviertan.",
     valor: 9000,
     imagen: "img/animacion.png"
   },
   {
+    id: 1,
     nombre: "Catering",
     descripcion: "Ofrecemos un servicio de catering con opciones adaptadas para grandes y chicos: menú saludable, dulces y salados.",
     valor: 12000,
     imagen: "img/catering.png"
   },
   {
+    id: 2,
     nombre: "Fotografía y Video",
     descripcion: "Capturamos los mejores momentos del evento con fotos y videos profesionales para que tengas un recuerdo inolvidable.",
     valor: 9000,
     imagen: "img/fotografia.png"
   },
   {
+    id: 3,
     nombre: "Alquiler de Inflables",
     descripcion: "Disponemos de inflables seguros y divertidos para todas las edades.",
     valor: 15000,
     imagen: "img/inflables.png"
   },
   {
+    id: 4,
     nombre: "Música y DJ",
     descripcion: "Música para todos los eventos.",
     valor: 8000,
     imagen: "img/dj.png"
   },
   {
+    id: 5,
     nombre: "Decoración Temática",
     descripcion: "Temáticas personalizadas con decoración única y creativa.",
     valor: 8000,
     imagen: "img/decoracion.png"
   },
   {
+    id: 6,
     nombre: "Cotillón",
     descripcion: "Cotillón colorido y divertido que complementa la fiesta.",
     valor: 6000,

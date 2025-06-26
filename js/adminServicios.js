@@ -27,20 +27,32 @@ document.addEventListener('DOMContentLoaded', () => {   //Espera a que el DOM es
         const valor = document.getElementById('valor').value;
         const imagen = document.getElementById('imagen').value || 'img/salonDefault.png';   //si se deja vacio carga imagen default
 
-        const servicio = { nombre, valor, descripcion, imagen };
-
         const servicios = JSON.parse(localStorage.getItem('servicios')) || [];  //carga servicios o inicializa vacio
 
         if (indiceEditar !== null) {
             //  Entra a modo edicion
-            servicios[indiceEditar] = servicio;
+            id = servicios[indiceEditar].id;
             alert(`Servicio editado: ${nombre}`);
-            indiceEditar = null;    //Vuelve modo alta nuevo
         } else {
             //Modo alta
-            servicios.push(servicio);
+            const ids = servicios.map(s => s.id);
+            if (ids.length > 0) {
+                id = Math.max(...ids) + 1;
+            } else {
+                id = 0;
+            }
             alert(`Servicio agregado: ${nombre}`);
         }
+
+        const servicio = { id, nombre, descripcion, valor, imagen };
+
+        if (indiceEditar !== null) {
+            servicios[indiceEditar] = servicio;
+            indiceEditar = null;
+        } else {
+            servicios.push(servicio);
+        }
+
         //agrega el servicio al arreglo de servicios
 
         localStorage.setItem('servicios', JSON.stringify(servicios))    //guarda los servicios
@@ -63,7 +75,7 @@ function mostrarServicios() {
 
     const servicios = JSON.parse(localStorage.getItem('servicios')) || [];
 
-    servicios.forEach((servicio, index) => {    //Renderiza en la tabla cada servicio del arreglo de servicios
+    servicios.forEach((servicio) => {    //Renderiza en la tabla cada servicio del arreglo de servicios
         const fila = document.createElement('tr');
         fila.innerHTML = `
         <td class="text-center"><img src="${servicio.imagen}" alt="${servicio.nombre}" style="width: 100px; height: 100px;"></td>
@@ -71,8 +83,8 @@ function mostrarServicios() {
         <td>${servicio.descripcion}</td>
         <td class="text-center">$${servicio.valor}</td>
         <td class="text-center">
-            <button class="btn btn-sm btn-warning m-3" onclick="editarServicio(${index})">Editar</button>
-            <button class="btn btn-sm btn-danger m-3" onclick="eliminarServicio(${index})">Eliminar</button>
+            <button class="btn btn-sm btn-warning m-3" onclick="editarServicio(${servicio.id})">Editar</button>
+            <button class="btn btn-sm btn-danger m-3" onclick="eliminarServicio(${servicio.id})">Eliminar</button>
         </td>
         `;
 

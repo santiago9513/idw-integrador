@@ -58,6 +58,7 @@ form.addEventListener('submit', function (event) {
 
     const salones = JSON.parse(localStorage.getItem('salones')) || [];
     const servicios = JSON.parse(localStorage.getItem('servicios')) || [];
+    const reservas = JSON.parse(localStorage.getItem('reservas')) || []; // Array de reservas
 
     // Captura salon seleccionado
     const salonSeleccionado = salones.find(s => s.nombre === selecSalon.value);
@@ -90,12 +91,38 @@ form.addEventListener('submit', function (event) {
     const confirmado = confirm(resumen + '\n\nConfirmar la reserva?');
 
     if (confirmado) {
+        let nombreCliente = null;
+        while (!nombreCliente) {
+            nombreCliente = prompt("Ingrese nombre y apellido:");
+        }
+
         // Actualiza localstorage con salon reservado
         const indexSalon = salones.findIndex(s => s === salonSeleccionado);
         if (indexSalon !== -1) {
             salones[indexSalon].estado = "Reservado";
             localStorage.setItem('salones', JSON.stringify(salones));
         }
+
+        let idReserva;
+        const idsReservas = reservas.map(r => r.id);
+            if (idsReservas.length > 0) {
+                idReserva = Math.max(...idsReservas) + 1;
+            } else {
+                idReserva = 0;
+            }
+        const fechaActual = new Date().toISOString();
+        const nuevaReserva = {
+            id: idReserva,
+            cliente: nombreCliente,
+            fecha: fechaActual,
+            salon: salonSeleccionado,
+            servicios: serviciosElegidos,
+            valortotal: total
+        };
+
+        reservas.push(nuevaReserva);
+        localStorage.setItem('reservas', JSON.stringify(reservas));
+
         renderizarSalones();
         form.reset();
 
