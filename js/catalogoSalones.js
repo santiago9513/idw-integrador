@@ -1,5 +1,5 @@
 const imagenes = JSON.parse(localStorage.getItem('imagenes')) || [];
-//crea los salones default y los guarda en localstorage
+//crea los salones default 
 const salonesDefault = [
   {
     id: 0,
@@ -59,7 +59,10 @@ const salonesDefault = [
 
 function obtenerRutaImagen(idSalon) {
   const img = imagenes.find(imagen => imagen.idSalon === idSalon);
-  return img.ruta;
+  if (!img) {
+    return 'img/salonDefault.png';
+  } 
+  return img.ruta;  
 }
 
 //Si no hay datos en el localstorage, carga los salones default
