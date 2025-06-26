@@ -35,53 +35,30 @@
         </nav>
     </header>
 
-    <div class="d-flex justify-content-end position-relative">
-        <a id="admin" class="btn btn-danger position-absolute m-2 d-none" href="listaReservas.html">Admin</a>
-    </div>
-
     <main>
 
         <section>
-            <h1 class="text-center my-5 text-beige">Reserva de salones</h1>
+            <h1 class="text-center my-5 text-beige">Listado de Reservas</h1>
         </section>
 
-        <form class="mx-5" id="formReserva">
-
-            <div class="mb-3">
-                <label class="form-label fw-bold">Nombre Salon</label>
-                <select class="form-select" id="nombreSalon" required>
-                    <option></option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label fw-bold">Servicios Adicionales</label>
-                <div id="nombreServicio" class="d-flex flex-column gap-1">
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <button type="submit" class="btn btn-info">Reservar</button>
-            </div>
-
-        </form>
-        
-        <section class="mb-5 p-5">
-            <h3 class="mt-5 text-beige">Lista de Salones disponibles</h3>
-
-            <table class="table table-striped table-bordered mt-3" id="tablaSalones">
+        <div class="container my-5">
+            <table class="table table-striped table-bordered mt-3">
                 <thead class="sticky-top">
                     <tr>
-                        <th class="text-center">Imagen</th>
-                        <th class="text-center">Nombre</th>
-                        <th class="text-center">Direccion</th>
-                        <th class="w-50 text-center">Descripcion</th>
-                        <th class="text-center">Valor</th>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Salón</th>
+                        <th>Servicios</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
-                <tbody>
-
+                <tbody id="tablaReservas">
+                    
                 </tbody>
             </table>
-        </section>
+        </div>
+
     </main>
 
     <footer class="text-white text-center py-4 mt-auto bg-beige">
@@ -98,9 +75,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-    <script src="./js/catalogoServicios.js"></script>
-    <script src="./js/reserva.js"></script>
-    <script src="./js/estadoSesion.js"></script>
+    <script src="./js/listaReservas.js"></script>
+
 </body>
 
 </html>
